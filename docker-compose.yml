@@ -2,7 +2,10 @@ version: "3.8"
 
 services:
   bitcoind:
-    image: lncm/bitcoind:v24.0@sha256:db19fe46f30acd3854f4f0d239278137d828ce3728f925c8d92faaab1ba8556a
+    image: bitcoin/bitcoin:latest@sha256:a6d37288b01827d74af9c37d6f506234827bd153efe2b4c2778882e991827750
+    environment:
+      UID: ${UID}
+      GID: ${GID}
     command:
       - -${APP_CORE_LIGHTNING_BITCOIN_NETWORK}
       - -fallbackfee=0.0002

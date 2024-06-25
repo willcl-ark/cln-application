@@ -27,6 +27,10 @@ if [[ "$SETUP" == "docker" ]]; then
     export SINGLE_SIGN_ON=true
     export CORE_LIGHTNING_PATH="/data/.lightning"
     export COMMANDO_CONFIG="/data/.lightning/.commando-env"
+    UID=$(id -u)
+    export UID=$UID
+    GID=$(id -g)
+    export GID=$GID
     echo "Docker Environment Variables Set"
 else
     export DEVICE_DOMAIN_NAME="local.local"
